@@ -1,0 +1,228 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  width: 420px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #4a3080;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: #888;
+  margin-bottom: 24px;
+  font-size: 0.9rem;
+}
+
+/* 단 선택 */
+.dan-select {
+  margin-bottom: 24px;
+}
+
+.dan-select label {
+  font-weight: 600;
+  color: #555;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.dan-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.dan-btn {
+  width: 44px;
+  height: 44px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  background: white;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #555;
+  transition: all 0.2s;
+}
+
+.dan-btn.active {
+  background: #667eea;
+  border-color: #667eea;
+  color: white;
+}
+
+.dan-btn:hover:not(.active) {
+  border-color: #667eea;
+  color: #667eea;
+}
+
+/* 통계 */
+.stats {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 28px;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: #999;
+  margin-top: 2px;
+}
+
+.correct-val { color: #22c55e; }
+.wrong-val   { color: #ef4444; }
+.score-val   { color: #667eea; }
+
+/* 문제 영역 */
+.question-box {
+  background: linear-gradient(135deg, #f0f0ff, #e8e0ff);
+  border-radius: 16px;
+  padding: 32px 20px;
+  margin-bottom: 24px;
+}
+
+.question-text {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #4a3080;
+  letter-spacing: 4px;
+}
+
+.question-text .op { color: #764ba2; }
+
+/* 입력 */
+.answer-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+#answer-input {
+  flex: 1;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  padding: 14px 18px;
+  font-size: 1.3rem;
+  text-align: center;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+#answer-input:focus { border-color: #667eea; }
+#answer-input.correct { border-color: #22c55e; background: #f0fff4; }
+#answer-input.wrong   { border-color: #ef4444; background: #fff0f0; }
+
+#submit-btn {
+  padding: 14px 22px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+#submit-btn:hover { opacity: 0.85; }
+
+/* 피드백 */
+.feedback {
+  font-size: 1.1rem;
+  font-weight: 600;
+  min-height: 28px;
+  margin-bottom: 16px;
+}
+
+.feedback.correct { color: #22c55e; }
+.feedback.wrong   { color: #ef4444; }
+
+/* 진행 바 */
+.progress-wrap {
+  background: #eee;
+  border-radius: 99px;
+  height: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 99px;
+  transition: width 0.4s ease;
+}
+
+/* 결과 화면 */
+.result-screen {
+  display: none;
+}
+
+.result-emoji { font-size: 4rem; margin-bottom: 12px; }
+.result-title { font-size: 1.5rem; font-weight: 700; color: #4a3080; margin-bottom: 8px; }
+.result-score { font-size: 1.1rem; color: #666; margin-bottom: 28px; }
+
+#restart-btn {
+  padding: 14px 36px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+#restart-btn:hover { opacity: 0.85; }
+
+.mode-toggle {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.mode-btn {
+  padding: 8px 18px;
+  border: 2px solid #ddd;
+  border-radius: 20px;
+  background: white;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #555;
+  transition: all 0.2s;
+}
+
+.mode-btn.active {
+  background: #667eea;
+  border-color: #667eea;
+  color: white;
+}
